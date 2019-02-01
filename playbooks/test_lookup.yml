@@ -4,8 +4,22 @@
   gather_facts: false
 
   vars:
-    lookup_loader_info: "{{ lookup('collection_inspect', 'dummy') }}"
+    # lookup_loader_info: "{{ lookup('alikins.collection_inspect.lookup.collection_inspect', 'dummy') }}"
+    # lookup_loader_info2: "{{ lookup('alikins.collection_inspect.collection_inspect', 'dummy') }}"
+    # lookup_loader_info3: "{{ lookup('alikins.collection_inspect.collection_inspect', 'dummy') }}"
+    # lookup_loader_info4: "{{ lookup('collection_inspect', 'dummy') }}"
   tasks:
+    - debug:
+        msg: "Just a test message for a callback"
+
+    - name: try to find lookup plugin alikins.collection_inspect.collection_inspect
+      set_fact:
+        blip: "{{ lookup('alikins.collection_inspect.collection_inspect', 'dummy') }}"
+
+    - name: try to find lookup plugin alikins.collection_inspect.lookup.collection_inspect
+      set_fact:
+        blip: "{{ lookup('alikins.collection_inspect.lookup.collection_inspect', 'dummy') }}"
+
     - name: show lookup loader info data
       debug:
         var: lookup_loader_info
