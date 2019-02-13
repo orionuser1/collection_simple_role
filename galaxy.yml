@@ -1,0 +1,48 @@
+##################################################
+# 	required
+##################################################
+
+# this can be a company/brand or product namespace under which all content lives
+# typically, this is the github user or org where the source of this collection
+# will live
+namespace: "alikins"
+
+# the designation of this specific collection
+name: "collection_inspect"
+
+# semantic versioning compliant version designation
+version: "0.0.3"
+
+# a list of the collection's content authors: 'Full Name <email> (http://site) @nicks:irc/im/site#channel'
+authors:
+  - "Adrian Likins <alikins@redhat.com>"
+
+
+# short summary of the collection
+description: "A set of 'collection_inspect' plugins for debugging collection loading"
+
+# a valid SPDX license identifier https://spdx.org/licenses/
+license: "GPL-3.0-or-later"
+
+# list of keywords you want to associate the collection with for indexing/search systems
+tags:
+  - collectiontest
+
+# list of dependencies, other collections this collection requires to be installed for it to be usable
+dependencies:
+
+##################################################
+# 	links
+##################################################
+
+# url of originating SCM repository
+repository:
+
+# url to online docs
+documentation:
+
+# homepage of the collection/project
+homepage:
+
+# issue tracker url
+issues:
