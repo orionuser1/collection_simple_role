@@ -11,6 +11,7 @@ galaxy.yml.bak
 # can happen with 'editable' installs
 meta/.galaxy_install_info
 
+*.retry
 
 # generic gitignore stuff
 # Byte-compiled / optimized / DLL files
