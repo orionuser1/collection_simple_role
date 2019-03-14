@@ -25,14 +25,14 @@ def collection_inspect(text):
 
     try:
         aq = [text,
-              "#( __file__=%s" % dunders['__file__'],
-              "__path__=%s" % dunders['__path__'],
-              "__name__=%s" % dunders['__name__'],
-              ")"]
+              "collection_inspect filter:\n\t__file__=%s\n" % dunders['__file__'],
+              "\t__path__=%s\n" % dunders['__path__'],
+              "\t__name__=%s\n" % dunders['__name__'],
+              ]
     except Exception as e:
         print(e)
         raise
-    return ', '.join(aq)
+    return ''.join(aq)
 
 
 # ---- Ansible filters ----
