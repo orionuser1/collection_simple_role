@@ -45,7 +45,7 @@ import sys
 
 from ansible.plugins.vars import BaseVarsPlugin
 
-from ansible.module_utils.collection_inspect import get_dunders
+from ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect import get_dunders
 
 log = logging.getLogger(__name__)
 FOUND = {}
@@ -63,8 +63,8 @@ class VarsModule(BaseVarsPlugin):
 
         super(VarsModule, self).get_vars(loader, path, entities)
 
-        data = {}
-        data.update(get_dunders(globals()))
+        data = {'collection_inspect': {}}
+        data['collection_inspect'].update(get_dunders(globals()))
 
-        data['sys_path'] = sys.path
+        data['collection_inspect']['sys_path'] = sys.path
         return data
