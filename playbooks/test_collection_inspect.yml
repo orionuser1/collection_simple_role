@@ -1,6 +1,7 @@
 ---
 - name: Test alikins.collection_inspect collection
   hosts: localhost
+  gather_facts: false
   vars:
     foo: "fooFooFOO"
     # Test having the filter plugin loaded early
@@ -18,3 +19,8 @@
     - name: show collection_inspect filter results
       debug:
         msg: "{{ foo |alikins.collection_inspect.collection_inspect }}"
+
+    # TODO: not sure if vars plugins are expected to work yet
+    # - name: show vars plugins for collection_inspect
+    #   debug:
+    #     var: vars
