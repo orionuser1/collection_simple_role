@@ -1,5 +1,5 @@
 
-def get_dunders(_globals, force_serializable=False):
+def get_dunders(_globals, force_serializable=True):
     '''Pass in the dict returned from globals() from caller
 
     ie, call like:
