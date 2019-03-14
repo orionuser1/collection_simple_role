@@ -5,7 +5,8 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
-from ansible.module_utils.collection_inspect import get_dunders
+# from ansible.module_utils.collection_inspect import get_dunders
+from ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect import get_dunders
 
 ANSIBLE_METADATA = {
     'metadata_version': '1.1',
