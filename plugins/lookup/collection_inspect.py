@@ -27,7 +27,7 @@ RETURN = """
 
 from ansible.plugins.lookup import LookupBase
 
-from ansible.module_utils.collection_inspect import get_dunders
+from ansible_collections.alikins.collection_inspect.plugins.module_utils import collection_inspect
 
 
 class LookupModule(LookupBase):
@@ -35,8 +35,7 @@ class LookupModule(LookupBase):
     def run(self, terms, variables, **kwargs):
 
         ret = []
-        dunders = get_dunders(globals())
+        dunders = collection_inspect.get_dunders(globals())
         for key in dunders:
-            # ret.append("%s=%s" % (key, dunders[key]))
-            ret.append((key, repr(dunders[key])))
+            ret.append((key, dunders[key]))
         return ret
