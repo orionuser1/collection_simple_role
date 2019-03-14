@@ -1,0 +1,20 @@
+---
+- name: Test alikins.collection_inspect collection
+  hosts: localhost
+  vars:
+    foo: "fooFooFOO"
+    # Test having the filter plugin loaded early
+    blip: "{{ foo |alikins.collection_inspect.collection_inspect }}"
+  tasks:
+    - name: "Test collection_inspect module and module_utils loaded from alikins.collection_inspect collection"
+      alikins.collection_inspect.collection_inspect:
+        args:
+      register: module_result
+
+    - name: Show collection_inspect module results
+      debug:
+        var: module_result
+
+    - name: show collection_inspect filter results
+      debug:
+        msg: "{{ foo |alikins.collection_inspect.collection_inspect }}"
