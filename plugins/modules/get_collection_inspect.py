@@ -19,12 +19,9 @@ logging.basicConfig(level=logging.DEBUG, format=log_format)
 log.debug('sys.path: %s', pprint.pformat(sys.path))
 log.debug('sys.meta_path: %s', pprint.pformat(sys.meta_path))
 
-try:
-    # from ansible_collections.alikins.collection_inspect.plugins.module_utils import collection_inspect
-    from ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect import get_dunders
-except ImportError as ex:
-    log.exception(ex)
-    raise
+# from ansible_collections.alikins.collection_inspect.plugins.module_utils import collection_inspect
+from ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect import get_dunders
+# import ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect
 
 
 def main():
@@ -33,6 +30,8 @@ def main():
         'success': True,
         'changed': True,
         # 'dunders': collection_inspect.get_dunders(globals(), force_serializable=True)
+        # 'dunders': collection_inspect.get_dunders(globals(), force_serializable=True)
+        # 'dunders': ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect.get_dunders(globals(), force_serializable=True)
         'dunders': get_dunders(globals(), force_serializable=True)
     }
     print(json.dumps(res))
