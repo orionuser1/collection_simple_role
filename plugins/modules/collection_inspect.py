@@ -6,23 +6,3 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-
-import json
-import sys
-
-from ansible.module_utils import collection_inspect
-
-
-def main():
-
-    res = {
-        'success': True,
-        'changed': True,
-        'dunders': collection_inspect.get_dunders(globals(), force_serializable=True)
-    }
-    print(json.dumps(res))
-    sys.exit(0)
-
-
-if __name__ == "__main__":
-    main()
