@@ -25,11 +25,9 @@ def collection_inspect(text):
         raise
 
     try:
-        aq = [text,
-              "collection_inspect filter:\n\t__file__=%s\n" % dunders['__file__'],
-              "\t__path__=%s\n" % dunders['__path__'],
-              "\t__name__=%s\n" % dunders['__name__'],
-              ]
+        aq = ["collection_inspect filter:\n"]
+        for key in dunders:
+            aq.append("\t%s = %s\n" % (key, dunders[key]))
     except Exception as e:
         print(e)
         raise
