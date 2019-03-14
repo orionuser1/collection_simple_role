@@ -1,30 +1,34 @@
 ---
 - name: The first play
-  hosts: local_test
+  hosts: localhost
   gather_facts: false
 
   vars:
     dummy: "dummy"
-    loader_info: "{{ dummy|collection_inspect() }}"
+    loader_info: "{{ dummy|alikins.collection_inspect.collection_inspect }}"
   tasks:
     - debug:
         var: loader_info
+    - name: use module alikins.collection_inspect.collection_spect
+      alikins.collection_inspect.do_nothing:
+        blip: "foo"
+
 
 - name: a become play
-  hosts: local_test
+  hosts: localhost
   tags:
     - a_become_play_tag
   gather_facts: false
   become_method: sudo
   vars:
     dummy: "dummy"
-    loader_info2: "{{ dummy|collection_inspect() }}"
+    loader_info2: "{{ dummy|alikins.collection_inspect.collection_inspect }}"
   tasks:
     - debug:
         var: loader_info2
 
 - name: the second second play
-  hosts: local_test
+  hosts: localhost
   tags:
     - the_second_second_play_tag
   gather_facts: false
@@ -33,7 +37,7 @@
   tasks:
     - name: set a fact with another filter invocation
       set_fact:
-        more_loader_info: "{{ dummy|collection_inspect() }}"
+        more_loader_info: "{{ dummy|collection_inspect }}"
 
     - name: show the second filter results
       debug:
