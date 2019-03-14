@@ -1,6 +1,6 @@
 ---
 - name: The first play
-  hosts: local_test
+  hosts: localhost
   gather_facts: false
 
   vars:
@@ -16,20 +16,20 @@
       set_fact:
         blip: "{{ lookup('alikins.collection_inspect.collection_inspect', 'dummy') }}"
 
-    - name: try to find lookup plugin alikins.collection_inspect.lookup.collection_inspect
-      set_fact:
-        blip: "{{ lookup('alikins.collection_inspect.lookup.collection_inspect', 'dummy') }}"
+    # - name: try to find lookup plugin alikins.collection_inspect.lookup.collection_inspect
+    #   set_fact:
+    #     blip: "{{ lookup('alikins.collection_inspect.lookup.collection_inspect', 'dummy') }}"
 
     - name: show lookup loader info data
       debug:
         var: lookup_loader_info
 
-- name: a become play
-  hosts: local_test
-  tags:
-    - a_become_play_tag
-  gather_facts: false
-  become_method: sudo
-  tasks:
-    - debug:
-        msg: "{{ lookup('collection_inspect', 'dummy')}}"
+# - name: a become play
+#   hosts: localhost
+#   tags:
+#     - a_become_play_tag
+#   gather_facts: false
+#   become_method: sudo
+#   tasks:
+#     - debug:
+#         msg: "{{ lookup('collection_inspect', 'dummy')}}"
