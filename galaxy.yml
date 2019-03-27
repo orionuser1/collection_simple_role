@@ -1,13 +1,11 @@
 namespace: "alikins"
 name: "collection_inspect"
-version: "0.0.12"
+version: "0.0.13"
 license: "GPL-3.0-or-later"
 readme: "README.md"
 authors:
   - "Adrian Likins <alikins@redhat.com>"
 description: "A set of 'collection_inspect' plugins for debugging collection loading"
-tags:
-  - collectiontest
 dependencies:
 repository:
 documentation:

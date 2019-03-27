@@ -20,6 +20,7 @@ log.debug('sys.path: %s', pprint.pformat(sys.path))
 log.debug('sys.meta_path: %s', pprint.pformat(sys.meta_path))
 
 # from ansible_collections.alikins.collection_inspect.plugins.module_utils import collection_inspect
+from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect import get_dunders
 # import ansible_collections.alikins.collection_inspect.plugins.module_utils.collection_inspect
 
