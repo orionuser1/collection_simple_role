@@ -1,6 +1,6 @@
 namespace: "alikins"
 name: "collection_inspect"
-version: "0.0.14"
+version: "0.0.15"
 license: "GPL-3.0-or-later"
 readme: "README.md"
 authors:
