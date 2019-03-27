@@ -1,7 +1,7 @@
 namespace: "alikins"
 name: "collection_inspect"
-version: "0.0.15"
-license: "GPL-3.0-or-later"
+version: "0.0.16"
+license_file: MMMIT.txt
 readme: "README.md"
 authors:
   - "Adrian Likins <alikins@redhat.com>"
