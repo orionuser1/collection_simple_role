@@ -1,6 +1,6 @@
 namespace: "alikins"
 name: "collection_inspect"
-version: "0.0.17"
+version: "0.0.18"
 license_file: MMMIT.txt
 readme: "README.md"
 authors:
@@ -11,3 +11,5 @@ repository:
 documentation:
 homepage:
 issues:
+license:
+  -
