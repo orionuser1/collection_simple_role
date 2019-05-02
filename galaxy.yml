@@ -12,3 +12,5 @@ repository:
 documentation:
 homepage:
 issues:
+tags:
+  - collectiontest
