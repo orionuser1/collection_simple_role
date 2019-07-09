@@ -3,6 +3,7 @@ name: "collection_simple_role"
 version: "0.0.20"
 license:
   - MIT
+license_file: "LICENSE"
 readme: "README.md"
 authors:
   - "Orion User One <orionuser1@example.com>"
