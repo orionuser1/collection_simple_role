@@ -9,7 +9,7 @@ authors:
   - "Orion User One <orionuser1@example.com>"
 description: "A simple collection with a single role for testing purposes"
 dependencies:
-repository:
+repository: "https://github.com/orionuser1/collection_simple_role"
 documentation:
 homepage:
 issues:
